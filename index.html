@@ -6,22 +6,20 @@
 
 <title>Sunset Inn | West Columbia, SC</title>
 
-<meta name="description" content="Sunset Inn in West Columbia, South Carolina. Budget-friendly rooms right off I-26 with free Wi-Fi and free parking.">
+<meta name="description" content="Sunset Inn in West Columbia, South Carolina. Recently remodeled rooms, free Wi-Fi, free parking, heating and air conditioning, conveniently located near I-26 and nearby dining.">
 
 <style>
 :root{
-  --yellow:#FFD54F;
-  --gold:#F9A825;
-  --orange:#F57C00;
-  --red:#E63946;
-  --navy:#1D3557;
-  --dark:#14253D;
-  --cream:#FFFDF7;
-  --light:#FFF8E7;
-  --white:#fff;
-  --gray:#667085;
-  --border:#E7E9ED;
-  --shadow:0 18px 50px rgba(29,53,87,.10);
+  --blue:#155EEF;
+  --blue-dark:#0B2A5B;
+  --blue-light:#EAF2FF;
+  --blue-soft:#F4F8FF;
+  --white:#FFFFFF;
+  --text:#102A43;
+  --muted:#667085;
+  --border:#DCE5F2;
+  --green:#168A55;
+  --shadow:0 18px 45px rgba(11,42,91,.10);
   --radius:22px;
   --max:1180px;
 }
@@ -35,8 +33,8 @@
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:var(--cream);
-  color:var(--navy);
+  background:var(--white);
+  color:var(--text);
   line-height:1.6;
 }
 
@@ -53,7 +51,7 @@ a{
 /* TOP BAR */
 
 .topbar{
-  background:var(--navy);
+  background:var(--blue-dark);
   color:white;
   padding:9px 0;
   font-size:14px;
@@ -62,6 +60,7 @@ a{
 .topbar-inner{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   gap:20px;
 }
 
@@ -69,13 +68,17 @@ a{
   font-weight:800;
 }
 
-/* NAV */
+.topbar a:hover{
+  text-decoration:underline;
+}
+
+/* NAVIGATION */
 
 header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(255,255,255,.96);
+  background:rgba(255,255,255,.97);
   backdrop-filter:blur(15px);
   border-bottom:1px solid var(--border);
 }
@@ -83,8 +86,8 @@ header{
 .navbar{
   min-height:78px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
 }
 
 .brand{
@@ -93,16 +96,16 @@ header{
   gap:12px;
 }
 
-.brand-mark{
-  width:46px;
-  height:46px;
+.brand-logo{
+  width:48px;
+  height:48px;
   border-radius:14px;
-  background:linear-gradient(135deg,var(--yellow),var(--orange));
+  background:var(--blue);
   color:white;
   display:grid;
   place-items:center;
   font-weight:900;
-  box-shadow:0 8px 20px rgba(245,124,0,.25);
+  box-shadow:0 8px 20px rgba(21,94,239,.20);
 }
 
 .brand-text strong{
@@ -112,7 +115,7 @@ header{
 }
 
 .brand-text span{
-  color:var(--gray);
+  color:var(--muted);
   font-size:12px;
 }
 
@@ -129,11 +132,11 @@ header{
 }
 
 .nav-links a:hover{
-  color:var(--orange);
+  color:var(--blue);
 }
 
 .nav-call{
-  background:var(--red);
+  background:var(--blue);
   color:white!important;
   padding:12px 18px;
   border-radius:11px;
@@ -141,9 +144,9 @@ header{
 
 .menu-button{
   display:none;
-  border:none;
-  background:#f5f6f8;
-  color:var(--navy);
+  border:0;
+  background:var(--blue-light);
+  color:var(--blue-dark);
   width:44px;
   height:44px;
   border-radius:11px;
@@ -154,7 +157,7 @@ header{
 /* HERO */
 
 .hero{
-  min-height:670px;
+  min-height:660px;
   display:flex;
   align-items:center;
   position:relative;
@@ -162,62 +165,67 @@ header{
 
   background:
     radial-gradient(
-      circle at 82% 18%,
-      rgba(255,255,255,.55),
+      circle at 85% 15%,
+      rgba(255,255,255,.9),
       transparent 25%
     ),
     linear-gradient(
       135deg,
-      #FFE082,
-      #FFD54F 35%,
-      #FFB300 65%,
-      #F57C00 100%
+      #F7FBFF 0%,
+      #EAF2FF 45%,
+      #D6E6FF 100%
     );
 }
 
-.hero:before{
+.hero:after{
   content:"";
   position:absolute;
-  width:550px;
-  height:550px;
-  right:-200px;
-  bottom:-280px;
+  right:-180px;
+  bottom:-260px;
+  width:600px;
+  height:600px;
   border-radius:50%;
-  background:rgba(255,255,255,.16);
+  background:rgba(21,94,239,.08);
 }
 
 .hero-content{
   position:relative;
   z-index:2;
-  max-width:780px;
+  max-width:790px;
   padding:90px 0;
 }
 
-.eyebrow{
+.hero-badge{
   display:inline-flex;
-  background:rgba(255,255,255,.85);
-  color:var(--navy);
-  padding:9px 14px;
+  align-items:center;
+  gap:8px;
+  background:white;
+  color:var(--blue);
+  border:1px solid var(--border);
+  padding:9px 15px;
   border-radius:999px;
   font-size:13px;
   font-weight:900;
   margin-bottom:22px;
+  box-shadow:0 7px 20px rgba(11,42,91,.06);
 }
 
 .hero h1{
-  font-size:clamp(55px,9vw,100px);
-  line-height:.9;
+  font-size:clamp(52px,8vw,92px);
+  line-height:.94;
   letter-spacing:-5px;
-  margin-bottom:25px;
+  margin-bottom:24px;
+  color:var(--blue-dark);
 }
 
 .hero h1 span{
-  color:white;
+  color:var(--blue);
 }
 
 .hero p{
-  max-width:690px;
-  font-size:clamp(18px,2.4vw,24px);
+  max-width:700px;
+  font-size:clamp(18px,2.3vw,23px);
+  color:#38516D;
   font-weight:600;
   margin-bottom:30px;
 }
@@ -230,8 +238,8 @@ header{
 
 .button{
   display:inline-flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   padding:15px 22px;
   border-radius:12px;
   font-weight:900;
@@ -242,20 +250,21 @@ header{
   transform:translateY(-3px);
 }
 
-.button-red{
-  background:var(--red);
+.button-blue{
+  background:var(--blue);
   color:white;
-  box-shadow:0 10px 25px rgba(230,57,70,.25);
+  box-shadow:0 10px 25px rgba(21,94,239,.22);
 }
 
 .button-white{
   background:white;
-  color:var(--navy);
+  color:var(--blue-dark);
+  border:1px solid var(--border);
 }
 
-/* QUICK */
+/* QUICK INFO */
 
-.quick-info{
+.quick{
   margin-top:-55px;
   position:relative;
   z-index:10;
@@ -277,11 +286,11 @@ header{
 }
 
 .quick-item:last-child{
-  border-right:none;
+  border-right:0;
 }
 
 .quick-icon{
-  font-size:27px;
+  font-size:25px;
   margin-bottom:7px;
 }
 
@@ -290,91 +299,169 @@ header{
 }
 
 .quick-item span{
-  color:var(--gray);
+  color:var(--muted);
   font-size:13px;
 }
 
-/* GENERAL SECTIONS */
+/* GENERAL */
 
 section{
-  padding:100px 0;
+  padding:95px 0;
 }
 
 .section-heading{
   max-width:720px;
-  margin-bottom:45px;
+  margin-bottom:42px;
 }
 
 .section-label{
-  color:var(--orange);
+  color:var(--blue);
   text-transform:uppercase;
   letter-spacing:1.5px;
-  font-weight:900;
   font-size:13px;
-  margin-bottom:9px;
+  font-weight:900;
+  margin-bottom:8px;
 }
 
 .section-heading h2{
   font-size:clamp(35px,5vw,55px);
   line-height:1.05;
   letter-spacing:-2px;
+  color:var(--blue-dark);
   margin-bottom:15px;
 }
 
 .section-heading p{
-  color:var(--gray);
+  color:var(--muted);
   font-size:17px;
+}
+
+/* REMODELED */
+
+.remodeled{
+  background:white;
+}
+
+.remodeled-box{
+  background:linear-gradient(135deg,#0B2A5B,#155EEF);
+  color:white;
+  border-radius:28px;
+  padding:55px;
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:50px;
+  align-items:center;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  position:relative;
+}
+
+.remodeled-box:after{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  right:-120px;
+  top:-180px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+
+.remodeled-content{
+  position:relative;
+  z-index:2;
+}
+
+.remodeled-content .section-label{
+  color:#9EC5FF;
+}
+
+.remodeled-content h2{
+  font-size:clamp(35px,5vw,58px);
+  line-height:1;
+  letter-spacing:-2px;
+  margin-bottom:17px;
+}
+
+.remodeled-content p{
+  color:rgba(255,255,255,.78);
+  font-size:17px;
+}
+
+.remodeled-points{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+  position:relative;
+  z-index:2;
+}
+
+.remodeled-point{
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.15);
+  padding:18px;
+  border-radius:14px;
+}
+
+.remodeled-point strong{
+  display:block;
+  margin-bottom:3px;
+}
+
+.remodeled-point span{
+  color:rgba(255,255,255,.68);
+  font-size:13px;
 }
 
 /* AMENITIES */
 
 .amenities{
-  background:white;
+  background:var(--blue-soft);
 }
 
-.feature-grid{
+.amenity-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:18px;
 }
 
-.feature-card{
-  background:var(--cream);
+.amenity{
+  background:white;
   border:1px solid var(--border);
-  padding:30px;
+  padding:27px;
   border-radius:18px;
-  transition:.25s;
+  transition:.2s;
 }
 
-.feature-card:hover{
-  transform:translateY(-6px);
+.amenity:hover{
+  transform:translateY(-5px);
   box-shadow:var(--shadow);
 }
 
-.feature-icon{
-  width:52px;
-  height:52px;
-  border-radius:15px;
+.amenity-icon{
+  width:50px;
+  height:50px;
+  background:var(--blue-light);
+  border-radius:14px;
   display:grid;
   place-items:center;
-  background:#FFF3C4;
-  font-size:26px;
-  margin-bottom:17px;
+  font-size:24px;
+  margin-bottom:15px;
 }
 
-.feature-card h3{
-  margin-bottom:7px;
+.amenity h3{
+  margin-bottom:6px;
 }
 
-.feature-card p{
-  color:var(--gray);
+.amenity p{
+  color:var(--muted);
   font-size:14px;
 }
 
 /* ROOMS */
 
 .rooms{
-  background:#FFF9EA;
+  background:white;
 }
 
 .rooms-grid{
@@ -383,30 +470,31 @@ section{
   gap:22px;
 }
 
-.room-card{
-  background:white;
+.room{
   border:1px solid var(--border);
-  border-radius:var(--radius);
+  border-radius:22px;
   overflow:hidden;
+  background:white;
   transition:.25s;
 }
 
-.room-card:hover{
-  transform:translateY(-7px);
+.room:hover{
+  transform:translateY(-6px);
   box-shadow:var(--shadow);
 }
 
 .room-photo{
-  height:240px;
-  position:relative;
-  overflow:hidden;
+  height:220px;
   background:
     linear-gradient(
       135deg,
-      #FFE082,
-      #FFB74D,
-      #F57C00
+      #DCEBFF,
+      #AFCFFF
     );
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
 }
 
 .room-photo a{
@@ -417,42 +505,43 @@ section{
   justify-content:center;
 }
 
-.photo-overlay{
+.photo-box{
+  width:100%;
+  padding:25px;
   text-align:center;
-  background:rgba(255,255,255,.90);
-  border:2px dashed rgba(29,53,87,.25);
-  padding:22px;
-  border-radius:16px;
-  margin:20px;
+  background:rgba(255,255,255,.92);
+  border:2px dashed #9DB9DD;
+  border-radius:17px;
   transition:.2s;
 }
 
-.photo-overlay:hover{
-  transform:scale(1.03);
+.photo-box:hover{
+  transform:scale(1.02);
   background:white;
 }
 
-.photo-overlay strong{
+.photo-box strong{
   display:block;
-  font-size:17px;
+  color:var(--blue-dark);
   margin-bottom:5px;
 }
 
-.photo-overlay span{
-  color:var(--gray);
+.photo-box span{
+  color:var(--muted);
   font-size:12px;
 }
 
-.room-content{
-  padding:26px;
+.room-body{
+  padding:27px;
 }
 
-.room-title{
-  font-size:21px;
+.room-body h3{
+  font-size:22px;
   margin-bottom:13px;
+  color:var(--blue-dark);
 }
 
-.room-meta{
+.room-tags{
   display:flex;
   flex-wrap:wrap;
   gap:7px;
@@ -460,46 +549,84 @@ section{
 }
 
 .tag{
-  background:#FFF3C4;
-  color:var(--navy);
-  padding:6px 9px;
+  background:var(--blue-light);
+  color:var(--blue-dark);
   border-radius:8px;
+  padding:6px 9px;
   font-size:12px;
-  font-weight:800;
-}
-
-.room-features{
-  list-style:none;
-  display:grid;
-  gap:8px;
-  margin-bottom:22px;
-}
-
-.room-features li{
-  color:var(--gray);
-  font-size:14px;
-}
-
-.room-features li:before{
-  content:"✓";
-  color:var(--orange);
   font-weight:900;
-  margin-right:8px;
+}
+
+.room-body p{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:20px;
 }
 
 .room-button{
   width:100%;
   display:block;
   text-align:center;
-  background:var(--navy);
+  background:var(--blue);
   color:white;
-  padding:14px;
+  padding:13px;
   border-radius:11px;
   font-weight:900;
 }
 
-.room-button:hover{
-  background:var(--red);
+/* LOCATION BENEFITS */
+
+.nearby{
+  background:var(--blue-soft);
+}
+
+.nearby-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.nearby-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:30px;
+}
+
+.nearby-card h3{
+  color:var(--blue-dark);
+  font-size:24px;
+  margin-bottom:18px;
+}
+
+.nearby-list{
+  display:grid;
+  gap:13px;
+}
+
+.nearby-item{
+  display:flex;
+  align-items:flex-start;
+  gap:13px;
+}
+
+.nearby-item-icon{
+  width:40px;
+  height:40px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  background:var(--blue-light);
+  border-radius:11px;
+}
+
+.nearby-item strong{
+  display:block;
+}
+
+.nearby-item span{
+  color:var(--muted);
+  font-size:13px;
 }
 
 /* GALLERY */
@@ -511,15 +638,19 @@ section{
 .gallery-grid{
   display:grid;
   grid-template-columns:2fr 1fr 1fr;
-  grid-template-rows:245px 245px;
+  grid-template-rows:230px 230px;
   gap:15px;
 }
 
 .gallery-card{
-  position:relative;
-  overflow:hidden;
   border-radius:20px;
-  background:linear-gradient(135deg,#FFE082,#FFB74D,#F57C00);
+  overflow:hidden;
+  background:
+    linear-gradient(
+      135deg,
+      #EAF2FF,
+      #BDD5F7
+    );
 }
 
 .gallery-card:first-child{
@@ -527,141 +658,67 @@ section{
 }
 
 .gallery-card a{
-  width:100%;
   height:100%;
+  width:100%;
   display:grid;
   place-items:center;
   text-align:center;
-}
-
-.gallery-card-content{
-  background:rgba(255,255,255,.88);
   padding:25px;
+}
+
+.gallery-content{
+  background:rgba(255,255,255,.92);
+  padding:22px;
+  border:2px dashed #9DB9DD;
   border-radius:16px;
-  border:1px dashed rgba(29,53,87,.3);
-  margin:20px;
-  transition:.2s;
 }
 
-.gallery-card-content:hover{
-  transform:scale(1.03);
-}
-
-.gallery-card strong{
+.gallery-content strong{
   display:block;
-  font-size:18px;
+  color:var(--blue-dark);
   margin-bottom:5px;
 }
 
-.gallery-card span{
-  color:var(--gray);
-  font-size:13px;
+.gallery-content span{
+  color:var(--muted);
+  font-size:12px;
 }
 
-.maps-photos{
-  margin-top:25px;
-  background:var(--navy);
+.maps-photo-button{
+  margin-top:22px;
+  background:var(--blue-dark);
   color:white;
-  border-radius:20px;
-  padding:25px;
+  border-radius:14px;
+  padding:20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:20px;
 }
 
-.maps-photos p{
-  color:rgba(255,255,255,.7);
-  font-size:14px;
+.maps-photo-button p{
+  color:rgba(255,255,255,.65);
+  font-size:13px;
 }
 
-.maps-button{
-  background:var(--yellow);
-  color:var(--navy);
-  padding:13px 18px;
-  border-radius:11px;
+.maps-photo-button a{
+  background:white;
+  color:var(--blue-dark);
+  padding:12px 17px;
+  border-radius:10px;
   font-weight:900;
   white-space:nowrap;
 }
 
-.maps-button:hover{
+/* MANAGER */
+
+.manager{
+  background:var(--blue-soft);
+}
+
+.manager-box{
   background:white;
-}
-
-/* FEEDBACK */
-
-.feedback{
-  background:var(--navy);
-  color:white;
-}
-
-.feedback .section-heading p{
-  color:rgba(255,255,255,.7);
-}
-
-.feedback .section-label{
-  color:var(--yellow);
-}
-
-.feedback-note{
-  padding:19px;
-  border-radius:14px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.13);
-  color:rgba(255,255,255,.75);
-  margin-bottom:25px;
-  font-size:14px;
-}
-
-.feedback-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.feedback-card{
-  background:white;
-  color:var(--navy);
-  padding:25px;
-  border-radius:17px;
-}
-
-.stars{
-  color:var(--gold);
-  font-size:18px;
-  margin-bottom:10px;
-}
-
-.feedback-card p{
-  color:var(--gray);
-  font-size:14px;
-  margin-bottom:17px;
-}
-
-.feedback-card small{
-  font-weight:900;
-}
-
-/* OWNER */
-
-.owner-section{
-  background:white;
-}
-
-.owner-box{
-  background:
-    radial-gradient(
-      circle at 90% 10%,
-      rgba(255,213,79,.55),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      #FFF8DC,
-      #FFE0B2
-    );
-
-  border:1px solid #F1D58A;
+  border:1px solid var(--border);
   border-radius:25px;
   padding:45px;
   display:flex;
@@ -670,112 +727,106 @@ section{
   box-shadow:var(--shadow);
 }
 
-.owner-avatar{
-  width:110px;
-  height:110px;
+.manager-avatar{
+  width:105px;
+  height:105px;
   flex-shrink:0;
+  border-radius:50%;
   display:grid;
   place-items:center;
-  border-radius:50%;
-  background:linear-gradient(135deg,var(--gold),var(--orange));
+  background:var(--blue);
   color:white;
-  font-size:31px;
+  font-size:30px;
   font-weight:900;
 }
 
-.owner-content{
-  max-width:750px;
-}
-
-.owner-content h2{
+.manager-content h2{
+  color:var(--blue-dark);
   font-size:clamp(32px,5vw,47px);
   line-height:1;
   letter-spacing:-1.5px;
   margin-bottom:12px;
 }
 
-.owner-content p{
-  color:var(--gray);
-  font-size:16px;
+.manager-content p{
+  color:var(--muted);
   margin-bottom:20px;
 }
 
-.owner-contact{
+.manager-links{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
 }
 
-.owner-contact a{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  background:white;
-  border:1px solid #E8D8B5;
+.manager-links a{
   padding:11px 15px;
+  border:1px solid var(--border);
   border-radius:10px;
   font-size:14px;
   font-weight:800;
 }
 
-.owner-contact a:hover{
-  border-color:var(--orange);
-  color:var(--orange);
+.manager-links a:hover{
+  color:var(--blue);
+  border-color:var(--blue);
 }
 
 /* LOCATION */
 
 .location{
-  background:#FFF9EA;
+  background:white;
 }
 
 .location-grid{
   display:grid;
-  grid-template-columns:1fr 1.2fr;
+  grid-template-columns:1fr 1.25fr;
   gap:25px;
 }
 
 .location-card{
-  background:white;
+  background:var(--blue-soft);
   border:1px solid var(--border);
-  border-radius:var(--radius);
+  border-radius:22px;
   padding:35px;
 }
 
 .location-card h3{
-  font-size:29px;
+  font-size:30px;
+  color:var(--blue-dark);
   margin-bottom:25px;
 }
 
-.location-detail{
+.detail{
   display:flex;
-  gap:14px;
-  margin-bottom:22px;
+  gap:13px;
+  margin-bottom:20px;
 }
 
-.location-icon{
+.detail-icon{
   width:42px;
   height:42px;
-  background:#FFF3C4;
-  border-radius:11px;
+  flex-shrink:0;
   display:grid;
   place-items:center;
-  flex-shrink:0;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:11px;
 }
 
-.location-detail strong{
+.detail strong{
   display:block;
 }
 
-.location-detail span{
-  color:var(--gray);
+.detail span{
+  color:var(--muted);
   font-size:14px;
 }
 
 .map{
   min-height:430px;
+  border-radius:22px;
   overflow:hidden;
-  border-radius:var(--radius);
   border:1px solid var(--border);
   box-shadow:var(--shadow);
 }
@@ -790,37 +841,36 @@ section{
 /* CTA */
 
 .cta{
-  background:white;
+  background:var(--blue-soft);
 }
 
 .cta-box{
+  background:linear-gradient(135deg,#0B2A5B,#155EEF);
+  color:white;
   border-radius:27px;
-  padding:60px;
-  background:
-    radial-gradient(circle at 85% 20%,#FFF3A6,transparent 25%),
-    linear-gradient(135deg,#FFD54F,#FFB300,#F57C00);
+  padding:55px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:30px;
+  gap:25px;
 }
 
 .cta-box h2{
   font-size:clamp(34px,5vw,50px);
   line-height:1;
   letter-spacing:-2px;
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
 
 .cta-box p{
-  font-weight:600;
+  color:rgba(255,255,255,.72);
 }
 
 .cta-phone{
-  background:var(--red);
-  color:white;
-  padding:18px 25px;
-  border-radius:13px;
+  background:white;
+  color:var(--blue-dark);
+  padding:17px 24px;
+  border-radius:12px;
   font-weight:900;
   white-space:nowrap;
 }
@@ -828,23 +878,23 @@ section{
 /* FOOTER */
 
 footer{
-  background:var(--dark);
+  background:#071D3D;
   color:white;
-  padding:65px 0 25px;
+  padding:60px 0 25px;
 }
 
 .footer-grid{
   display:grid;
   grid-template-columns:1.5fr 1fr 1fr;
-  gap:50px;
-  padding-bottom:45px;
-  border-bottom:1px solid rgba(255,255,255,.1);
+  gap:45px;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,.10);
 }
 
 .footer-brand p{
-  margin-top:15px;
-  color:rgba(255,255,255,.62);
+  color:rgba(255,255,255,.60);
   max-width:430px;
+  margin-top:15px;
   font-size:14px;
 }
 
@@ -860,7 +910,7 @@ footer h4{
 
 .footer-links li,
 .footer-links a{
-  color:rgba(255,255,255,.62);
+  color:rgba(255,255,255,.60);
   font-size:14px;
 }
 
@@ -869,13 +919,15 @@ footer h4{
 }
 
 .copyright{
-  padding-top:25px;
+  padding-top:24px;
   display:flex;
   justify-content:space-between;
   gap:20px;
-  color:rgba(255,255,255,.45);
+  color:rgba(255,255,255,.40);
   font-size:12px;
 }
+
+/* MOBILE CALL */
 
 .mobile-call{
   display:none;
@@ -885,7 +937,23 @@ footer h4{
 
 @media(max-width:950px){
 
-  .feature-grid{
+  .quick-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .quick-item:nth-child(2){
+    border-right:0;
+  }
+
+  .quick-item:nth-child(-n+2){
+    border-bottom:1px solid var(--border);
+  }
+
+  .remodeled-box{
+    grid-template-columns:1fr;
+  }
+
+  .amenity-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
@@ -893,13 +961,13 @@ footer h4{
     grid-template-columns:1fr;
   }
 
-  .room-card{
+  .room{
     max-width:650px;
     width:100%;
     margin:auto;
   }
 
-  .feedback-grid{
+  .nearby-grid{
     grid-template-columns:1fr;
   }
 
@@ -955,7 +1023,7 @@ footer h4{
   }
 
   .hero{
-    min-height:580px;
+    min-height:590px;
   }
 
   .hero h1{
@@ -963,23 +1031,32 @@ footer h4{
   }
 
   section{
-    padding:75px 0;
+    padding:72px 0;
   }
 
   .quick-grid{
     grid-template-columns:1fr;
   }
 
-  .quick-item{
-    border-right:none;
+  .quick-item,
+  .quick-item:nth-child(2){
+    border-right:0;
     border-bottom:1px solid var(--border);
   }
 
   .quick-item:last-child{
-    border-bottom:none;
+    border-bottom:0;
   }
 
-  .feature-grid{
+  .remodeled-box{
+    padding:35px 25px;
+  }
+
+  .remodeled-points{
+    grid-template-columns:1fr;
+  }
+
+  .amenity-grid{
     grid-template-columns:1fr;
   }
 
@@ -992,29 +1069,28 @@ footer h4{
     grid-row:auto;
   }
 
-  .maps-photos{
+  .maps-photo-button{
     flex-direction:column;
     align-items:flex-start;
   }
 
-  .maps-button{
+  .maps-photo-button a{
     width:100%;
     text-align:center;
   }
 
-  .owner-box{
+  .manager-box{
     padding:32px 22px;
     flex-direction:column;
     text-align:center;
   }
 
-  .owner-contact{
+  .manager-links{
     justify-content:center;
   }
 
-  .owner-contact a{
+  .manager-links a{
     width:100%;
-    justify-content:center;
   }
 
   .cta-box{
@@ -1040,17 +1116,17 @@ footer h4{
   .mobile-call{
     display:flex;
     position:fixed;
-    left:15px;
-    right:15px;
-    bottom:15px;
+    left:14px;
+    right:14px;
+    bottom:14px;
     z-index:2000;
-    background:var(--red);
+    background:var(--blue);
     color:white;
     justify-content:center;
     padding:15px;
     border-radius:14px;
     font-weight:900;
-    box-shadow:0 12px 30px rgba(0,0,0,.22);
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
   }
 }
 </style>
@@ -1061,17 +1137,19 @@ footer h4{
 <!-- TOP BAR -->
 
 <div class="topbar">
-  <div class="container topbar-inner">
 
-    <span>
-      ☀️ Sunset Inn • West Columbia, South Carolina
-    </span>
+<div class="container topbar-inner">
 
-    <a href="tel:+18037028641">
-      📞 (803) 702-8641
-    </a>
+<span>
+🏨 Recently Remodeled • West Columbia, South Carolina
+</span>
 
-  </div>
+<a href="tel:+18037028641">
+📞 (803) 702-8641
+</a>
+
+</div>
+
 </div>
 
 
@@ -1081,41 +1159,61 @@ footer h4{
 
 <nav class="navbar container">
 
-  <a href="#home" class="brand">
+<a href="#home" class="brand">
 
-    <div class="brand-mark">
-      SI
-    </div>
+<div class="brand-logo">
+SI
+</div>
 
-    <div class="brand-text">
-      <strong>Sunset Inn</strong>
-      <span>West Columbia, SC</span>
-    </div>
+<div class="brand-text">
 
-  </a>
+<strong>Sunset Inn</strong>
 
+<span>West Columbia, SC</span>
 
-  <button class="menu-button" id="menuButton">
-    ☰
-  </button>
+</div>
+
+</a>
 
 
-  <ul class="nav-links" id="navLinks">
+<button class="menu-button" id="menuButton">
+☰
+</button>
 
-    <li><a href="#rooms">Rooms</a></li>
-    <li><a href="#amenities">Amenities</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#feedback">Feedback</a></li>
-    <li><a href="#owner">Owner</a></li>
-    <li><a href="#location">Location</a></li>
 
-    <li>
-      <a class="nav-call" href="tel:+18037028641">
-        📞 Call to Book
-      </a>
-    </li>
+<ul class="nav-links" id="navLinks">
 
-  </ul>
+<li>
+<a href="#rooms">Rooms</a>
+</li>
+
+<li>
+<a href="#amenities">Amenities</a>
+</li>
+
+<li>
+<a href="#nearby">Nearby</a>
+</li>
+
+<li>
+<a href="#gallery">Photos</a>
+</li>
+
+<li>
+<a href="#manager">Manager</a>
+</li>
+
+<li>
+<a href="#location">Location</a>
+</li>
+
+<li>
+<a href="tel:+18037028641" class="nav-call">
+📞 Call to Book
+</a>
+</li>
+
+</ul>
 
 </nav>
 
@@ -1133,30 +1231,31 @@ footer h4{
 
 <div class="hero-content">
 
-  <div class="eyebrow">
-    ☀️ Right Off I-26 • West Columbia, SC
-  </div>
+<div class="hero-badge">
+✨ Recently Remodeled • Clean & Comfortable
+</div>
 
-  <h1>
-    Sunset <span>Inn</span>
-  </h1>
+<h1>
+Sunset <span>Inn</span>
+</h1>
 
-  <p>
-    Budget-friendly rooms right off I-26.
-    A convenient place to stop, rest, and get back on the road.
-  </p>
+<p>
+A clean, recently remodeled place to stay in West Columbia,
+conveniently located near I-26, nearby dining, coffee,
+and local services.
+</p>
 
-  <div class="hero-buttons">
+<div class="hero-buttons">
 
-    <a href="tel:+18037028641" class="button button-red">
-      📞 Call to Book
-    </a>
+<a href="tel:+18037028641" class="button button-blue">
+📞 Call to Book
+</a>
 
-    <a href="#rooms" class="button button-white">
-      🛏️ Explore Rooms
-    </a>
+<a href="#rooms" class="button button-white">
+🛏️ View Rooms
+</a>
 
-  </div>
+</div>
 
 </div>
 
@@ -1165,43 +1264,175 @@ footer h4{
 </section>
 
 
-<!-- QUICK INFO -->
+<!-- QUICK FEATURES -->
 
-<div class="quick-info">
+<div class="quick">
 
 <div class="container">
 
 <div class="quick-grid">
 
-  <div class="quick-item">
-    <div class="quick-icon">📍</div>
-    <strong>Right Off I-26</strong>
-    <span>Convenient West Columbia location</span>
-  </div>
+<div class="quick-item">
 
-  <div class="quick-item">
-    <div class="quick-icon">📶</div>
-    <strong>Free Wi-Fi</strong>
-    <span>Stay connected during your visit</span>
-  </div>
+<div class="quick-icon">
+✨
+</div>
 
-  <div class="quick-item">
-    <div class="quick-icon">🚗</div>
-    <strong>Free Parking</strong>
-    <span>Free on-site parking</span>
-  </div>
+<strong>
+Recently Remodeled
+</strong>
 
-  <div class="quick-item">
-    <div class="quick-icon">🛏️</div>
-    <strong>Multiple Room Types</strong>
-    <span>Queen, King & Double rooms</span>
-  </div>
+<span>
+Updated property and rooms
+</span>
+
+</div>
+
+
+<div class="quick-item">
+
+<div class="quick-icon">
+🧼
+</div>
+
+<strong>
+Clean & Neat Rooms
+</strong>
+
+<span>
+Fresh, comfortable spaces
+</span>
+
+</div>
+
+
+<div class="quick-item">
+
+<div class="quick-icon">
+📶
+</div>
+
+<strong>
+Free Wi-Fi
+</strong>
+
+<span>
+Stay connected
+</span>
+
+</div>
+
+
+<div class="quick-item">
+
+<div class="quick-icon">
+🚗
+</div>
+
+<strong>
+Free Parking
+</strong>
+
+<span>
+Convenient on-site parking
+</span>
 
 </div>
 
 </div>
 
 </div>
+
+</div>
+
+
+<!-- REMODELED -->
+
+<section class="remodeled">
+
+<div class="container">
+
+<div class="remodeled-box">
+
+<div class="remodeled-content">
+
+<div class="section-label">
+A Fresh New Look
+</div>
+
+<h2>
+Recently remodeled for a cleaner, newer stay.
+</h2>
+
+<p>
+Sunset Inn is being remodeled with a modern,
+clean, simple style designed to make your stay
+more comfortable and convenient.
+</p>
+
+</div>
+
+
+<div class="remodeled-points">
+
+<div class="remodeled-point">
+
+<strong>
+✨ Updated Rooms
+</strong>
+
+<span>
+Recently remodeled spaces.
+</span>
+
+</div>
+
+
+<div class="remodeled-point">
+
+<strong>
+🧼 Clean & Neat
+</strong>
+
+<span>
+A focus on clean guest rooms.
+</span>
+
+</div>
+
+
+<div class="remodeled-point">
+
+<strong>
+🔥 Free Heating
+</strong>
+
+<span>
+Heating available for guests.
+</span>
+
+</div>
+
+
+<div class="remodeled-point">
+
+<strong>
+❄️ Air Conditioning
+</strong>
+
+<span>
+Comfortable rooms year-round.
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 
 <!-- AMENITIES -->
@@ -1212,47 +1443,175 @@ footer h4{
 
 <div class="section-heading">
 
-  <div class="section-label">
-    Essentials
-  </div>
+<div class="section-label">
+Amenities
+</div>
 
-  <h2>
-    Simple. Convenient. Road-trip ready.
-  </h2>
+<h2>
+The essentials for a comfortable stay.
+</h2>
 
-  <p>
-    Sunset Inn focuses on the basics travelers need
-    for a practical stay near the highway.
-  </p>
+<p>
+Everything you need for a simple and convenient motel stay.
+</p>
 
 </div>
 
 
-<div class="feature-grid">
+<div class="amenity-grid">
 
-  <div class="feature-card">
-    <div class="feature-icon">📶</div>
-    <h3>Free Wi-Fi</h3>
-    <p>Connect your phone, laptop, or other devices during your stay.</p>
-  </div>
 
-  <div class="feature-card">
-    <div class="feature-icon">🚗</div>
-    <h3>Free Parking</h3>
-    <p>Convenient on-site parking for guests.</p>
-  </div>
+<div class="amenity">
 
-  <div class="feature-card">
-    <div class="feature-icon">❄️</div>
-    <h3>Air Conditioning</h3>
-    <p>Climate-controlled rooms for a more comfortable stay.</p>
-  </div>
+<div class="amenity-icon">
+📶
+</div>
 
-  <div class="feature-card">
-    <div class="feature-icon">📺</div>
-    <h3>Flat-Screen TV</h3>
-    <p>Relax in your room with television available.</p>
-  </div>
+<h3>
+Free Wi-Fi
+</h3>
+
+<p>
+Stay connected with complimentary Wi-Fi.
+</p>
+
+</div>
+
+
+<div class="amenity">
+
+<div class="amenity-icon">
+🚗
+</div>
+
+<h3>
+Free Parking
+</h3>
+
+<p>
+Convenient free on-site parking.
+</p>
+
+</div>
+
+
+<div class="amenity">
+
+<div class="amenity-icon">
+🔥
+</div>
+
+<h3>
+Free Heating
+</h3>
+
+<p>
+Heating available in the guest rooms.
+</p>
+
+</div>
+
+
+<div class="amenity">
+
+<div class="amenity-icon">
+❄️
+</div>
+
+<h3>
+Air Conditioning
+</h3>
+
+<p>
+Climate-controlled rooms for comfort.
+</p>
+
+</div>
+
+
+<div class="amenity">
+
+<div class="amenity-icon">
+📺
+</div>
+
+<h3>
+Flat-Screen TV
+</h3>
+
+<p>
+Relax with television available in your room.
+</p>
+
+</div>
+
+
+<div class="amenity">
+
+<div class="amenity-icon">
+🧊
+</div>
+
+<h3>
+Microwave & Mini-Fridge
+</h3>
+
+<p>
+Convenient in-room food storage and heating.
+</p>
+
+</div>
+
+
+<div class="amenity">
+
+<div class="amenity-icon">
+🪑
+</div>
+
+<h3>
+Workspace
+</h3>
+
+<p>
+Writing desk space for work or planning your trip.
+</p>
+
+</div>
+
+
+<div class="amenity">
+
+<div class="amenity-icon">
+🧼
+</div>
+
+<h3>
+Clean & Neat Rooms
+</h3>
+
+<p>
+Rooms maintained with a focus on cleanliness.
+</p>
+
+</div>
+
+
+<div class="amenity">
+
+<div class="amenity-icon">
+✨
+</div>
+
+<h3>
+Recently Remodeled
+</h3>
+
+<p>
+Updated areas as part of the property's remodeling.
+</p>
+
+</div>
 
 </div>
 
@@ -1269,18 +1628,17 @@ footer h4{
 
 <div class="section-heading">
 
-  <div class="section-label">
-    Rooms
-  </div>
+<div class="section-label">
+Rooms
+</div>
 
-  <h2>
-    Choose the room that fits your trip.
-  </h2>
+<h2>
+Comfortable options for different travelers.
+</h2>
 
-  <p>
-    Different room configurations are available for
-    individuals, couples, families, and small groups.
-  </p>
+<p>
+Choose the room configuration that works best for your stay.
+</p>
 
 </div>
 
@@ -1290,183 +1648,389 @@ footer h4{
 
 <!-- QUEEN -->
 
-<article class="room-card">
+<article class="room">
 
-  <div class="room-photo">
+<div class="room-photo">
 
-    <a
-      href="https://www.google.com/maps/place/Sunset+Inn/@34.0058588,-81.1100374,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgID3ldnY_gE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHRPTWknRaGRjsBqvTynRL0N_eWsFGY6JiW_8qXp8VWZbDlkPE-MngN9_1_iJGBb8-YKkQBeZSisWtbq509WPyYkD-jWCLroYIitYUn3yZah9N_DjbKUZUY-feLWHlt-nQYqgR8E0-WKKw%3Dw203-h270-k-no!7i3000!8i4000!4m19!1m8!3m7!1s0x88f8bcd26626c42d:0x5e20879bd0dabdbe!2s114+McSwain+Dr,+West+Columbia,+SC+29169!3b1!8m2!3d34.0057456!4d-81.1096549!16s%2Fg%2F11c5mpz6_f!3m9!1s0x88f8bcd267fe5d0f:0x7dc494c0f90dd8a0!5m2!4m1!1i2!8m2!3d34.0057457!4d-81.1096549!10e5!16s%2Fg%2F11v3r8rnn8?entry=ttu"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+<a
+href="https://www.google.com/maps/place/Sunset+Inn/@34.0058588,-81.1100374,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgID3ldnY_gE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHRPTWknRaGRjsBqvTynRL0N_eWsFGY6JiW_8qXp8VWZbDlkPE-MngN9_1_iJGBb8-YKkQBeZSisWtbq509WPyYkD-jWCLroYIitYUn3yZah9N_DjbKUZUY-feLWHlt-nQYqgR8E0-WKKw%3Dw203-h270-k-no!7i3000!8i4000!4m19!1m8!3m7!1s0x88f8bcd26626c42d:0x5e20879bd0dabdbe!2s114+McSwain+Dr,+West+Columbia,+SC+29169!3b1!8m2!3d34.0057456!4d-81.1096549!16s%2Fg%2F11c5mpz6_f!3m9!1s0x88f8bcd267fe5d0f:0x7dc494c0f90dd8a0!5m2!4m1!1i2!8m2!3d34.0057457!4d-81.1096549!10e5!16s%2Fg%2F11v3r8rnn8?entry=ttu"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-      <div class="photo-overlay">
+<div class="photo-box">
 
-        <strong>
-          📸 View Queen Room Photo
-        </strong>
+<strong>
+📸 View Room Photo
+</strong>
 
-        <span>
-          Open the Sunset Inn photo on Google Maps
-        </span>
+<span>
+Open Sunset Inn photos on Google Maps
+</span>
 
-      </div>
+</div>
 
-    </a>
+</a>
 
-  </div>
+</div>
 
 
-  <div class="room-content">
+<div class="room-body">
 
-    <h3 class="room-title">
-      Standard Queen Room
-    </h3>
+<h3>
+Standard Queen Room
+</h3>
 
-    <div class="room-meta">
-      <span class="tag">👥 2 Guests</span>
-      <span class="tag">🛏️ 1 Queen Bed</span>
-    </div>
+<div class="room-tags">
 
-    <ul class="room-features">
+<span class="tag">
+👥 2 Guests
+</span>
 
-      <li>Free Wi-Fi</li>
-      <li>Air conditioning</li>
-      <li>Microwave</li>
-      <li>Mini-fridge</li>
-      <li>Wooden flooring</li>
-      <li>Writing desk</li>
-      <li>Flat-screen TV</li>
+<span class="tag">
+🛏️ 1 Queen Bed
+</span>
 
-    </ul>
+</div>
 
-    <a href="tel:+18037028641" class="room-button">
-      📞 Call to Book
-    </a>
+<p>
+A practical room for two guests with a queen bed
+and convenient in-room features.
+</p>
 
-  </div>
+<a href="tel:+18037028641" class="room-button">
+📞 Call to Book
+</a>
+
+</div>
 
 </article>
 
 
 <!-- KING -->
 
-<article class="room-card">
+<article class="room">
 
-  <div class="room-photo">
+<div class="room-photo">
 
-    <a
-      href="https://www.google.com/maps/place/Sunset+Inn/@34.0058588,-81.1100374,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgID3ldnY_gE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHRPTWknRaGRjsBqvTynRL0N_eWsFGY6JiW_8qXp8VWZbDlkPE-MngN9_1_iJGBb8-YKkQBeZSisWtbq509WPyYkD-jWCLroYIitYUn3yZah9N_DjbKUZUY-feLWHlt-nQYqgR8E0-WKKw%3Dw203-h270-k-no!7i3000!8i4000!4m19!1m8!3m7!1s0x88f8bcd26626c42d:0x5e20879bd0dabdbe!2s114+McSwain+Dr,+West+Columbia,+SC+29169!3b1!8m2!3d34.0057456!4d-81.1096549!16s%2Fg%2F11c5mpz6_f!3m9!1s0x88f8bcd267fe5d0f:0x7dc494c0f90dd8a0!5m2!4m1!1i2!8m2!3d34.0057457!4d-81.1096549!10e5!16s%2Fg%2F11v3r8rnn8?entry=ttu"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+<a
+href="https://www.google.com/maps/place/Sunset+Inn/@34.0058588,-81.1100374,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgID3ldnY_gE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHRPTWknRaGRjsBqvTynRL0N_eWsFGY6JiW_8qXp8VWZbDlkPE-MngN9_1_iJGBb8-YKkQBeZSisWtbq509WPyYkD-jWCLroYIitYUn3yZah9N_DjbKUZUY-feLWHlt-nQYqgR8E0-WKKw%3Dw203-h270-k-no!7i3000!8i4000!4m19!1m8!3m7!1s0x88f8bcd26626c42d:0x5e20879bd0dabdbe!2s114+McSwain+Dr,+West+Columbia,+SC+29169!3b1!8m2!3d34.0057456!4d-81.1096549!16s%2Fg%2F11c5mpz6_f!3m9!1s0x88f8bcd267fe5d0f:0x7dc494c0f90dd8a0!5m2!4m1!1i2!8m2!3d34.0057457!4d-81.1096549!10e5!16s%2Fg%2F11v3r8rnn8?entry=ttu"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-      <div class="photo-overlay">
+<div class="photo-box">
 
-        <strong>
-          📸 View King Room Photo
-        </strong>
+<strong>
+📸 View Room Photo
+</strong>
 
-        <span>
-          Open Sunset Inn photos on Google Maps
-        </span>
+<span>
+Open Sunset Inn photos on Google Maps
+</span>
 
-      </div>
+</div>
 
-    </a>
+</a>
 
-  </div>
+</div>
 
 
-  <div class="room-content">
+<div class="room-body">
 
-    <h3 class="room-title">
-      Standard King Room
-    </h3>
+<h3>
+Standard King Room
+</h3>
 
-    <div class="room-meta">
-      <span class="tag">👥 2 Guests</span>
-      <span class="tag">🛏️ 1 King Bed</span>
-    </div>
+<div class="room-tags">
 
-    <ul class="room-features">
+<span class="tag">
+👥 2 Guests
+</span>
 
-      <li>Free Wi-Fi</li>
-      <li>Individual climate control</li>
-      <li>Microwave</li>
-      <li>Mini-fridge</li>
-      <li>Hardwood floors</li>
-      <li>Flat-screen TV</li>
+<span class="tag">
+🛏️ 1 King Bed
+</span>
 
-    </ul>
+</div>
 
-    <a href="tel:+18037028641" class="room-button">
-      📞 Call to Book
-    </a>
+<p>
+A comfortable king-bed option for travelers looking
+for a little more room to relax.
+</p>
 
-  </div>
+<a href="tel:+18037028641" class="room-button">
+📞 Call to Book
+</a>
+
+</div>
 
 </article>
 
 
 <!-- DOUBLE -->
 
-<article class="room-card">
+<article class="room">
 
-  <div class="room-photo">
+<div class="room-photo">
 
-    <a
-      href="https://www.google.com/maps/place/Sunset+Inn/@34.0058588,-81.1100374,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgID3ldnY_gE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHRPTWknRaGRjsBqvTynRL0N_eWsFGY6JiW_8qXp8VWZbDlkPE-MngN9_1_iJGBb8-YKkQBeZSisWtbq509WPyYkD-jWCLroYIitYUn3yZah9N_DjbKUZUY-feLWHlt-nQYqgR8E0-WKKw%3Dw203-h270-k-no!7i3000!8i4000!4m19!1m8!3m7!1s0x88f8bcd26626c42d:0x5e20879bd0dabdbe!2s114+McSwain+Dr,+West+Columbia,+SC+29169!3b1!8m2!3d34.0057456!4d-81.1096549!16s%2Fg%2F11c5mpz6_f!3m9!1s0x88f8bcd267fe5d0f:0x7dc494c0f90dd8a0!5m2!4m1!1i2!8m2!3d34.0057457!4d-81.1096549!10e5!16s%2Fg%2F11v3r8rnn8?entry=ttu"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+<a
+href="https://www.google.com/maps/place/Sunset+Inn/@34.0058588,-81.1100374,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgID3ldnY_gE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHRPTWknRaGRjsBqvTynRL0N_eWsFGY6JiW_8qXp8VWZbDlkPE-MngN9_1_iJGBb8-YKkQBeZSisWtbq509WPyYkD-jWCLroYIitYUn3yZah9N_DjbKUZUY-feLWHlt-nQYqgR8E0-WKKw%3Dw203-h270-k-no!7i3000!8i4000!4m19!1m8!3m7!1s0x88f8bcd26626c42d:0x5e20879bd0dabdbe!2s114+McSwain+Dr,+West+Columbia,+SC+29169!3b1!8m2!3d34.0057456!4d-81.1096549!16s%2Fg%2F11c5mpz6_f!3m9!1s0x88f8bcd267fe5d0f:0x7dc494c0f90dd8a0!5m2!4m1!1i2!8m2!3d34.0057457!4d-81.1096549!10e5!16s%2Fg%2F11v3r8rnn8?entry=ttu"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-      <div class="photo-overlay">
+<div class="photo-box">
 
-        <strong>
-          📸 View Double Room Photo
-        </strong>
+<strong>
+📸 View Room Photo
+</strong>
 
-        <span>
-          Open Sunset Inn photos on Google Maps
-        </span>
+<span>
+Open Sunset Inn photos on Google Maps
+</span>
 
-      </div>
+</div>
 
-    </a>
+</a>
 
-  </div>
+</div>
 
 
-  <div class="room-content">
+<div class="room-body">
 
-    <h3 class="room-title">
-      Deluxe Double Room
-    </h3>
+<h3>
+Deluxe Double Room
+</h3>
 
-    <div class="room-meta">
-      <span class="tag">👥 4 Guests</span>
-      <span class="tag">🛏️ 2 Double Beds</span>
-    </div>
+<div class="room-tags">
 
-    <ul class="room-features">
+<span class="tag">
+👥 4 Guests
+</span>
 
-      <li>Free Wi-Fi</li>
-      <li>Microwave</li>
-      <li>Mini-fridge</li>
-      <li>Multi-channel TV</li>
-      <li>Workspace desk</li>
-      <li>Ideal for small groups</li>
+<span class="tag">
+🛏️ 2 Double Beds
+</span>
 
-    </ul>
+</div>
 
-    <a href="tel:+18037028641" class="room-button">
-      📞 Call to Book
-    </a>
+<p>
+A practical option for families or small groups
+with two double beds.
+</p>
 
-  </div>
+<a href="tel:+18037028641" class="room-button">
+📞 Call to Book
+</a>
+
+</div>
 
 </article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NEARBY -->
+
+<section id="nearby" class="nearby">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="section-label">
+Convenient Location
+</div>
+
+<h2>
+Close to what you need.
+</h2>
+
+<p>
+The motel is conveniently located near local services,
+coffee, and places to eat.
+</p>
+
+</div>
+
+
+<div class="nearby-grid">
+
+
+<div class="nearby-card">
+
+<h3>
+📍 Nearby Essentials
+</h3>
+
+<div class="nearby-list">
+
+<div class="nearby-item">
+
+<div class="nearby-item-icon">
+🏥
+</div>
+
+<div>
+
+<strong>
+Hospital Nearby
+</strong>
+
+<span>
+Convenient for visitors and families needing access to a nearby hospital.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="nearby-item">
+
+<div class="nearby-item-icon">
+☕
+</div>
+
+<div>
+
+<strong>
+Starbucks Nearby
+</strong>
+
+<span>
+Grab coffee or a quick drink nearby.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="nearby-item">
+
+<div class="nearby-item-icon">
+🚗
+</div>
+
+<div>
+
+<strong>
+Near I-26
+</strong>
+
+<span>
+A convenient location for travelers passing through the area.
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="nearby-card">
+
+<h3>
+🍽️ Food Within Walking Distance
+</h3>
+
+<div class="nearby-list">
+
+<div class="nearby-item">
+
+<div class="nearby-item-icon">
+🍳
+</div>
+
+<div>
+
+<strong>
+Breakfast
+</strong>
+
+<span>
+Nearby options make it convenient to grab breakfast.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="nearby-item">
+
+<div class="nearby-item-icon">
+🍔
+</div>
+
+<div>
+
+<strong>
+Lunch
+</strong>
+
+<span>
+Nearby dining options are available for lunch.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="nearby-item">
+
+<div class="nearby-item-icon">
+🍽️
+</div>
+
+<div>
+
+<strong>
+Dinner
+</strong>
+
+<span>
+Find nearby places to eat without having to travel far.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="nearby-item">
+
+<div class="nearby-item-icon">
+🚶
+</div>
+
+<div>
+
+<strong>
+Walkable Dining
+</strong>
+
+<span>
+Several nearby food options can be reached on foot.
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -1483,18 +2047,17 @@ footer h4{
 
 <div class="section-heading">
 
-  <div class="section-label">
-    Gallery
-  </div>
+<div class="section-label">
+Photos
+</div>
 
-  <h2>
-    Explore Sunset Inn.
-  </h2>
+<h2>
+See Sunset Inn on Google Maps.
+</h2>
 
-  <p>
-    Tap any photo area to open the Sunset Inn photos
-    directly on Google Maps.
-  </p>
+<p>
+Tap a photo area to open the property's Google Maps photos.
+</p>
 
 </div>
 
@@ -1510,14 +2073,14 @@ target="_blank"
 rel="noopener noreferrer"
 >
 
-<div class="gallery-card-content">
+<div class="gallery-content">
 
 <strong>
-🏨 Sunset Inn Photos
+🏨 Property Photos
 </strong>
 
 <span>
-Open the property photos on Google Maps
+Open Google Maps photos
 </span>
 
 </div>
@@ -1535,14 +2098,14 @@ target="_blank"
 rel="noopener noreferrer"
 >
 
-<div class="gallery-card-content">
+<div class="gallery-content">
 
 <strong>
 🛏️ Guest Rooms
 </strong>
 
 <span>
-View room photos on Google Maps
+View room photos
 </span>
 
 </div>
@@ -1555,19 +2118,19 @@ View room photos on Google Maps
 <div class="gallery-card">
 
 <a
-href="https://www.google.com/maps/place/Sunset+Inn/@34.0058588,-81.1100374,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgID3ldnY_gE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHRPTWknRaGRjsBqvTynRL0N_eWsFGY6JiW_8qXp8VWZbDlkPE-MngN9_1_iJGBb8-YKkQBeZSisWtbq509WPyYkD-jWCLroYIitYUn3yZah9N_DjbKUZUY-feLWHlt-nQYqgR8E0-WKKw%3Dw203-h270-k-no!7i3000!8i4000!4m19!1m8!3m7!1s0x88f8bcd26626c42d:0x5e20879bd0dabdbe!2s114+McSwain+Dr,+West+Columbia,+SC+29169!3b1!8m2!3d34.0057456!4d-81.1096549!16s%2Fg%2F11c5mpz6_f!3m9!1s0x88f8bcd267fe5d0f!5m2!4m1!1i2!8m2!3d34.0057457!4d-81.1096549!10e5!16s%2Fg%2F11v3r8rnn8?entry=ttu"
+href="https://www.google.com/maps/place/Sunset+Inn/@34.0058588,-81.1100374,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgID3ldnY_gE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHRPTWknRaGRjsBqvTynRL0N_eWsFGY6JiW_8qXp8VWZbDlkPE-MngN9_1_iJGBb8-YKkQBeZSisWtbq509WPyYkD-jWCLroYIitYUn3yZah9N_DjbKUZUY-feLWHlt-nQYqgR8E0-WKKw%3Dw203-h270-k-no!7i3000!8i4000!4m19!1m8!3m7!1s0x88f8bcd26626c42d:0x5e20879bd0dabdbe!2s114+McSwain+Dr,+West+Columbia,+SC+29169!3b1!8m2!3d34.0057456!4d-81.1096549!16s%2Fg%2F11c5mpz6_f!3m9!1s0x88f8bcd267fe5d0f:0x7dc494c0f90dd8a0!5m2!4m1!1i2!8m2!3d34.0057457!4d-81.1096549!10e5!16s%2Fg%2F11v3r8rnn8?entry=ttu"
 target="_blank"
 rel="noopener noreferrer"
 >
 
-<div class="gallery-card-content">
+<div class="gallery-content">
 
 <strong>
-🧊 Room Amenities
+🧊 Room Features
 </strong>
 
 <span>
-View property photos on Google Maps
+View Google Maps photos
 </span>
 
 </div>
@@ -1579,26 +2142,26 @@ View property photos on Google Maps
 </div>
 
 
-<div class="maps-photos">
+<div class="maps-photo-button">
 
 <div>
 
 <strong>
-📸 See the actual Google Maps photos
+📸 Want to see all available photos?
 </strong>
 
 <p>
-Open the Sunset Inn photo listing you provided.
+Open the Sunset Inn Google Maps listing.
 </p>
 
 </div>
 
 <a
-class="maps-button"
-href="https://www.google.com/maps/place/Sunset+Inn/@34.0058588,-81.1100374,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgID3ldnY_gE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHRPTWknRaGRjsBqvTynRL0N_eWsFGY6JiW_8qXp8VWZbDlkPE-MngN9_1_iJGBb8-YKkQBeZSisWtbq509WPyYkD-jWCLroYIitYUn3yZah9N_DjbKUZUY-feLWHlt-nQYqgR8E0-WKKw%3Dw203-h270-k-no!7i3000!8i4000!4m19!1m8!3m7!1s0x88f8bcd26626c42d:0x5e20879bd0dabdbe!2s114+McSwain+Dr,+West+Columbia,+SC+29169!3b1!8m2!3d34.0057456!4d-81.1096549!16s%2Fg%2F11c5mpz6_f!3m9!1s0x88f8bcd267fe5d0f:0x7dc494c0f90dd8a0!5m2!4m1!1i2!8m2!3d34.0057457!4d-81.1096549!10e5!16s%2Fg%2F11v3r8rnn8?entry=ttu"
+href="https://www.google.com/maps/place/Sunset+Inn/@34.0058588,-81.1100374"
 target="_blank"
-rel="noopener noreferrer">
-Open Google Maps Photos →
+rel="noopener noreferrer"
+>
+View on Google Maps →
 </a>
 
 </div>
@@ -1608,82 +2171,22 @@ Open Google Maps Photos →
 </section>
 
 
-<!-- FEEDBACK -->
+<!-- MANAGER -->
 
-<section id="feedback" class="feedback">
-
-<div class="container">
-
-<div class="section-heading">
-
-<div class="section-label">
-Guest Feedback
-</div>
-
-<h2>
-Hear from real guests.
-</h2>
-
-<p>
-A transparent place for genuine guest feedback.
-</p>
-
-</div>
-
-<div class="feedback-note">
-<strong>Guest reviews:</strong>
-Only verified or genuine guest feedback should be published here.
-</div>
-
-<div class="feedback-grid">
-
-<div class="feedback-card">
-<div class="stars">★★★★★</div>
-<p>
-Guest review placeholder — replace this with a genuine verified guest review.
-</p>
-<small>Verified Guest</small>
-</div>
-
-<div class="feedback-card">
-<div class="stars">★★★★☆</div>
-<p>
-Guest review placeholder — replace this with a genuine verified guest review.
-</p>
-<small>Verified Guest</small>
-</div>
-
-<div class="feedback-card">
-<div class="stars">★★★★★</div>
-<p>
-Guest review placeholder — replace this with a genuine verified guest review.
-</p>
-<small>Verified Guest</small>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- OWNER -->
-
-<section id="owner" class="owner-section">
+<section id="manager" class="manager">
 
 <div class="container">
 
-<div class="owner-box">
+<div class="manager-box">
 
-<div class="owner-avatar">
+<div class="manager-avatar">
 DC
 </div>
 
-<div class="owner-content">
+<div class="manager-content">
 
 <div class="section-label">
-Meet the Owner
+Meet the Manager
 </div>
 
 <h2>
@@ -1691,12 +2194,11 @@ Dharmen Chauhan
 </h2>
 
 <p>
-Owner of Sunset Inn in West Columbia, South Carolina.
-Our goal is to provide travelers with a convenient,
-comfortable, and budget-friendly place to stay.
+Dharmen Chauhan is the manager of Sunset Inn in
+West Columbia, South Carolina.
 </p>
 
-<div class="owner-contact">
+<div class="manager-links">
 
 <a href="mailto:dharmenc@gmail.com">
 📧 dharmenc@gmail.com
@@ -1726,16 +2228,15 @@ comfortable, and budget-friendly place to stay.
 <div class="section-heading">
 
 <div class="section-label">
-Location
+Find Us
 </div>
 
 <h2>
-Easy access from I-26.
+Conveniently located in West Columbia.
 </h2>
 
 <p>
-Find Sunset Inn at 114 McSwain Dr in West Columbia,
-South Carolina.
+Find Sunset Inn at 114 McSwain Dr, near I-26.
 </p>
 
 </div>
@@ -1751,9 +2252,9 @@ Sunset Inn
 </h3>
 
 
-<div class="location-detail">
+<div class="detail">
 
-<div class="location-icon">
+<div class="detail-icon">
 📍
 </div>
 
@@ -1773,16 +2274,16 @@ West Columbia, SC 29169
 </div>
 
 
-<div class="location-detail">
+<div class="detail">
 
-<div class="location-icon">
+<div class="detail-icon">
 📞
 </div>
 
 <div>
 
 <strong>
-Motel Phone
+Call to Book
 </strong>
 
 <span>
@@ -1796,44 +2297,20 @@ Motel Phone
 </div>
 
 
-<div class="location-detail">
+<div class="detail">
 
-<div class="location-icon">
-👤
+<div class="detail-icon">
+☕
 </div>
 
 <div>
 
 <strong>
-Owner
+Nearby
 </strong>
 
 <span>
-Dharmen Chauhan<br>
-<a href="tel:+18035187792">
-(803) 518-7792
-</a>
-</span>
-
-</div>
-
-</div>
-
-
-<div class="location-detail">
-
-<div class="location-icon">
-📧
-</div>
-
-<div>
-
-<strong>
-Customer Care
-</strong>
-
-<span>
-support@oyorooms.com
+Hospital, Starbucks, and nearby dining options.
 </span>
 
 </div>
@@ -1845,7 +2322,7 @@ support@oyorooms.com
 href="https://www.google.com/maps/dir/?api=1&destination=114+McSwain+Dr%2C+West+Columbia%2C+SC+29169"
 target="_blank"
 rel="noopener noreferrer"
-class="button button-red"
+class="button button-blue"
 style="width:100%;"
 >
 📍 Get Directions
@@ -1861,11 +2338,10 @@ src="https://www.google.com/maps?q=114%20McSwain%20Dr%2C%20West%20Columbia%2C%20
 loading="lazy"
 allowfullscreen
 referrerpolicy="no-referrer-when-downgrade"
-title="Sunset Inn Google Maps location">
+title="Sunset Inn location">
 </iframe>
 
 </div>
-
 
 </div>
 
@@ -1874,7 +2350,7 @@ title="Sunset Inn Google Maps location">
 </section>
 
 
-<!-- CTA -->
+<!-- CALL TO BOOK -->
 
 <section class="cta">
 
@@ -1885,18 +2361,19 @@ title="Sunset Inn Google Maps location">
 <div>
 
 <h2>
-Need a room?
+Ready to stay?
 </h2>
 
 <p>
-Call Sunset Inn to ask about current availability.
+Call Sunset Inn to ask about availability and rooms.
 </p>
 
 </div>
 
 <a
 href="tel:+18037028641"
-class="cta-phone">
+class="cta-phone"
+>
 📞 (803) 702-8641
 </a>
 
@@ -1922,7 +2399,7 @@ class="cta-phone">
 
 <div class="brand">
 
-<div class="brand-mark">
+<div class="brand-logo">
 SI
 </div>
 
@@ -1941,8 +2418,8 @@ West Columbia, SC
 </div>
 
 <p>
-Budget-friendly rooms right off I-26 in West Columbia,
-South Carolina.
+Recently remodeled, clean and convenient rooms
+in West Columbia, South Carolina.
 </p>
 
 </div>
@@ -1958,9 +2435,9 @@ Explore
 
 <li><a href="#rooms">Rooms</a></li>
 <li><a href="#amenities">Amenities</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#feedback">Feedback</a></li>
-<li><a href="#owner">Owner</a></li>
+<li><a href="#nearby">Nearby</a></li>
+<li><a href="#gallery">Photos</a></li>
+<li><a href="#manager">Manager</a></li>
 <li><a href="#location">Location</a></li>
 
 </ul>
@@ -2025,7 +2502,8 @@ West Columbia, South Carolina
 
 <a
 href="tel:+18037028641"
-class="mobile-call">
+class="mobile-call"
+>
 📞 Call Sunset Inn — (803) 702-8641
 </a>
 
